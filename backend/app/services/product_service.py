@@ -29,7 +29,9 @@ class ProductService:
                 status_code=status.HTTP_404_NOT_FOUND,
                 detail=f'Category with id {category_id} not found'
             )
-        products = self.product_repository.get_by_id(category_id)
+
+        products = self.product_repository.get_by_category(category_id)
+
         products_response = [ProductResponse.model_validate(prod) for prod in products]
         return ProductListResponse(products=products_response, total=len(products_response))
 

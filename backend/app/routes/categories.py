@@ -7,7 +7,7 @@ from ..shcemas.category import CategoryResponse
 
 
 router = APIRouter(
-    prefix="api/categories",
+    prefix="/api/categories",
     tags=['categories']
 )
 
